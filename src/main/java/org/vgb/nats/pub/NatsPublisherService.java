@@ -14,6 +14,7 @@ public class NatsPublisherService {
     private Connection connection;
 
     public void publish(String topic, String msg) {
+        logger.info("Publishing message [{}] to topic [{}]", msg, topic);
         connection.publish(topic, msg.getBytes(StandardCharsets.UTF_8));
     }
 
